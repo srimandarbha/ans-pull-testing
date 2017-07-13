@@ -4,5 +4,5 @@
     - command: date
       register: date_val
     - debug: msg={{ date_val.stdout }}
-    - include {{ ansible_host }}.yml
+    - include: {{ ansible_host }}.yml
       when: test -d {{ ansible_host }}.yml
