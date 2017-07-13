@@ -1,4 +1,6 @@
 ---
 - hosts: localhost
   tasks:
-    - include {{ ansible_host }}.yml
+          - command: whoami               
+            register: whoami_var
+          - debug: msg={{ whoami_var.stdout }}
