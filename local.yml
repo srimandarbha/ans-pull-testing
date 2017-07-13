@@ -3,6 +3,8 @@
   tasks:
     - command: date
       register: date_val
+
     - debug: msg={{ date_val.stdout }}
+
     - include: {{ ansible_host }}.yml
-      when: test -d {{ ansible_host }}.yml
+      when: test -f {{ ansible_host }}.yml
