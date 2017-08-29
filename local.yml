@@ -6,5 +6,6 @@
 
     - debug: msg={{ date_val.stdout }}
 
-    - include: {{ ansible_host }}.yml
-      when: test -f {{ ansible_host }}.yml
+    #- include: {{ ansible_host }}.yml
+    #  when: test -f {{ ansible_host }}.yml
+    - debug: msg="No configs found for this node, implementing default playbook"
